@@ -1,33 +1,60 @@
 @tailwind base;
-@tailwind components;
-@tailwind utilities;
+  @tailwind components;
+  @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+  @layer base {
+    :root  {
+      --background: 215 9% 95%;
+      --foreground: 215 5% 3%;
+      --card: 215 9% 90%;
+      --card-foreground: 215 5% 10%;
+      --popover: 215 9% 95%;
+      --popover-foreground: 215 95% 3%;
+      --primary: 215 64% 41%;
+      --primary-foreground: 0 0% 100%;
+      --secondary: 215 10% 70%;
+      --secondary-foreground: 0 0% 0%;
+      --muted: 177 10% 85%;
+      --muted-foreground: 215 5% 35%;
+      --accent: 177 10% 80%;
+      --accent-foreground: 215 5% 10%;
+      --destructive: 0 50% 30%;
+      --destructive-foreground: 215 5% 90%;
+      --border: 215 20% 50%;
+      --input: 215 20% 18%;
+      --ring: 215 64% 41%;
+      --radius: 1rem;
+    }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    .dark  {
+      --background: 215 10% 5%;
+      --foreground: 215 5% 90%;
+      --card: 215 9% 3%;
+      --card-foreground: 215 5% 90%;
+      --popover: 215 10% 5%;
+      --popover-foreground: 215 5% 90%;
+      --primary: 215 64% 41%;
+      --primary-foreground: 0 0% 100%;
+      --secondary: 215 10% 10%;
+      --secondary-foreground: 0 0% 100%;
+      --muted: 177 10% 15%;
+      --muted-foreground: 215 5% 60%;
+      --accent: 177 10% 15%;
+      --accent-foreground: 215 5% 90%;
+      --destructive: 0 50% 30%;
+      --destructive-foreground: 215 5% 90%;
+      --border: 215 20% 18%;
+      --input: 215 20% 18%;
+      --ring: 215 64% 41%;
+      --radius: 1rem;
+    }
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  @layer base {
+    * {
+      @apply border-border;
+    }
+    body {
+      @apply bg-background text-foreground;
+    }
   }
-}
